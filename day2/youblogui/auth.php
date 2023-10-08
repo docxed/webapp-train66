@@ -8,12 +8,18 @@ if (isset($_POST['register'])) { // สมัครสมาชิก
     $lname = $_POST['lname']; // รับค่า lname จากฟอร์ม
     $password = $_POST['password']; // รับค่า password จากฟอร์ม
 
-    $sql = "INSERT INTO user (email, fname, lname, password) VALUES ('$email', '$fname', '$lname', '$password')"; // คำสั่ง sql เพื่อเพิ่มข้อมูล
-    $result = mysqli_query($conn, $sql); // สั่งให้คิวรี่คำสั่ง sql
-    if ($result) { // ตรวจสอบว่าสำเร็จหรือไม่
-        echo '<script>alert("สมัครสมาชิกสำเร็จ"); window.location.href="./index.php";</script>'; // สั่งให้ alert และ redirect ไปหน้า index.php
-    } else { // กรณีไม่สำเร็จ
-        echo 'สมัครสมาชิกไม่สำเร็จ' . $conn->error; // แสดง error
+    $sql1 = "SELECT * FROM user WHERE email='$email'"; // คำสั่ง sql เพื่อเลือกข้อมูล (เช็คว่ามี email นี้ในฐานข้อมูลหรือไม่)
+    $result1 = mysqli_query($conn, $sql1); // สั่งให้คิวรี่คำสั่ง sql
+    if (mysqli_num_rows($result1) > 0) { // ตรวจสอบว่ามีผลลัพธ์หรือไม่ (mysqli_num_rows คือ นับจำนวนแถวที่ได้จากการ query)
+        echo '<script>alert("อีเมลนี้มีผู้ใช้แล้ว"); window.location.href="./register.php";</script>'; // สั่งให้ alert และ redirect ไปหน้า index.php
+    } else { // กรณีไม่มีผลลัพธ์
+        $sql2 = "INSERT INTO user (email, fname, lname, password) VALUES ('$email', '$fname', '$lname', '$password')"; // คำสั่ง sql เพื่อเพิ่มข้อมูล
+        $result2 = mysqli_query($conn, $sql2); // สั่งให้คิวรี่คำสั่ง sql
+        if ($result2) { // ตรวจสอบว่าสำเร็จหรือไม่
+            echo '<script>alert("สมัครสมาชิกสำเร็จ"); window.location.href="./index.php";</script>'; // สั่งให้ alert และ redirect ไปหน้า index.php
+        } else { // กรณีไม่สำเร็จ
+            echo 'สมัครสมาชิกไม่สำเร็จ' . $conn->error; // แสดง error
+        }
     }
 } else if (isset($_POST['login'])) { // ล็อกอิน
     $email = $_POST['email']; // รับค่า email จากฟอร์ม

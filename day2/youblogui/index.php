@@ -31,7 +31,7 @@ if (isset($_SESSION['user_email'])) { // ตรวจสอบว่ามีก
                 <input name="password" type="password" class="form-control" placeholder="รหัสผ่าน" maxlength="20" required />
             </div>
             <button name="login" type="submit" class="btn btn-primary">ล็อกอิน</button>
-            <a href="./regster.php" class="btn btn-light" role="button">
+            <a href="./register.php" class="btn btn-light" role="button">
                 สมัครสมาชิก
             </a>
         </form>
