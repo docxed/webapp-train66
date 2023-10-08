@@ -7,7 +7,7 @@
 | 1 | Basic HTML + CSS + Bootstrap | [slide](https://docs.google.com/presentation/d/1rinKfWdBZsMlSqnOvMhqJLBdIKbVpKGpnfSd16cvCuo/edit?usp=sharing) | - |
 | 2 | PHP + Workshop Simple Blog | [workshop](https://github.com/docxed/webapp-train66/wiki/workshop%E2%80%90simpleblog), [workshop เฉลย](https://github.com/docxed/webapp-train66/blob/main/day1/workshop/index.php) | - |
 | 3 | PHP MySQLi + Database | [sheet](https://github.com/docxed/webapp-train66/wiki/PHP-MySQLi-DATABASE) | [code](https://github.com/docxed/webapp-train66/wiki/code) |
-| 4 | Workshop YouBlog | [workshop2](https://github.com/docxed/webapp-train66/wiki/workshop-YouBlog) | - |
+| 4 | Workshop YouBlog | [workshop2](https://github.com/docxed/webapp-train66/wiki/workshop-YouBlog), [workshop 2 เฉลย](https://github.com/docxed/webapp-train66/tree/main/day2/youblog) | - |
 
 ## เครื่องมือ
 
