@@ -65,7 +65,7 @@ include './db.php'; // เรียกใช้ไฟล์ db.php เพื่�
                                 แก้ไข
                             </a>
                             <!-- ส่งค่า postId ไปที่ post_actions.php โดยใช้ method GET -->
-                            <a href="./post_actions.php?delete=delete&postId<?php /* Code here */ ?>" class="btn btn-outline-danger mb-2" role="button">ลบ</a>
+                            <a href="./post_actions.php?delete=delete&postId<?php /* Code here */ ?>" class="btn btn-outline-danger mb-2" role="button" onclick="return confirm('คุณต้องการลบใช่หรือไม่?')">>ลบ</a>
                         </div>
                     </div>
                 </div>
